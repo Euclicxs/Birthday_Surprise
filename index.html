@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Christine! 💝</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<canvas id="fx"></canvas>
+<div id="hearts-layer"></div>
+<button id="music-toggle" class="music-toggle" aria-label="Toggle music"><span class="music-note">♫</span></button>
+<button id="nav-back" class="nav-btn nav-back" aria-label="Go back"><span>‹</span></button>
+<button id="nav-fwd" class="nav-btn nav-fwd" aria-label="Go forward"><span>›</span></button>
+
+<!-- SCENE 1 : ENVELOPE -->
+<section class="scene active" id="scene-envelope">
+  <div class="envelope-wrap">
+    <p class="whisper">Message is waiting to be revealed&hellip;</p>
+    <button class="envelope" id="envelope" aria-label="Open the surprise">
+      <div class="env-back"></div>
+      <div class="env-letter">
+        <span class="env-letter-name">Christine</span>
+      </div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <div class="seal"><span>C</span></div>
+      <span class="env-hint">tap to open</span>
+    </button>
+  </div>
+</section>
+
+<!-- SCENE 2 : WELCOME LETTER -->
+<section class="scene" id="scene-welcome">
+  <div class="paper">
+    <div class="paper-edge"></div>
+    <p class="kicker">for you, on your special day</p>
+    <h1 class="script-name">Happy Birthday,<br /><span id="welcome-name">Christine Remolleno</span></h1>
+    <p class="letter-text" id="welcome-text"></p>
+    <button class="btn" data-next="scene-gallery">Continue ✦</button>
+  </div>
+</section>
+
+<!-- SCENE 3 : GALLERY -->
+<section class="scene" id="scene-gallery">
+  <div class="gallery">
+    <p class="kicker light">little moments</p>
+    <div class="frame" id="frame">
+      <div class="photo" id="photo"></div>
+      <div class="photo-caption" id="photo-caption"></div>
+    </div>
+    <div class="gallery-nav">
+      <button class="ghost-btn" id="prev-photo">‹</button>
+      <div class="dots" id="dots"></div>
+      <button class="ghost-btn" id="next-photo">›</button>
+    </div>
+    <button class="btn" data-next="scene-cake">Next ✦</button>
+  </div>
+</section>
+
+<!-- SCENE 5 : CAKE -->
+<section class="scene" id="scene-cake">
+  <div class="cake-room">
+    <p class="kicker light">make a wish&hellip; but first</p>
+    <h2 class="serif">Tap the candle <span class="soft">to light it up</span></h2>
+
+    <div class="cake-stage" id="cake-stage">
+      <div class="cake-scale" id="cake-scale">
+        <div class="cake-top">
+          <div class="candles top" id="candles-top"></div>
+          <div class="icing"></div>
+          <div class="cherry"></div>
+        </div>
+        <div class="cake-layer layer-2">
+          <div class="candles mid left" id="candles-mid-l"></div>
+          <div class="candles mid right" id="candles-mid-r"></div>
+          <div class="drips"></div>
+        </div>
+        <div class="cake-layer layer-1">
+          <div class="candles bottom left" id="candles-bottom-l"></div>
+          <div class="candles bottom right" id="candles-bottom-r"></div>
+        </div>
+        <div class="plate"></div>
+      </div>
+      <div class="glow" id="cake-glow"></div>
+    </div>
+
+    <div class="click-meter">
+      <span class="count" id="click-count">0</span>
+      <span class="of"> 22 candles glowing</span>
+    </div>
+    <p class="hint" id="cake-hint">Tap the cake!</p>
+
+    <button class="btn hidden" id="final-blow">✨ One more tap for the surprise ✨</button>
+  </div>
+</section>
+
+<!-- SCENE 6 : SURPRISE -->
+<section class="scene" id="scene-finale">
+  <div class="balloons" id="balloons"></div>
+
+  <div class="banner" id="banner">
+    <span class="banner-string left"></span>
+    <span class="banner-string right"></span>
+    <h1 class="banner-text">Happy <span class="gold-text">22nd</span> Birthday,</h1>
+    <h2 class="script-name big" id="finale-name">Christine Remolleno!</h2>
+  </div>
+
+  <div class="scroll-letter" id="scroll-letter">
+    <div class="paper slim">
+      <p class="kicker">and now, the real surprise&hellip;</p>
+      <div class="letter-text" id="finale-text"></div>
+      <p class="signature">— with all my love ✦</p>
+      <button class="btn outline" id="replay">↺ replay the magic</button>
+      <button class="secret-trigger" id="secret-trigger" aria-label="A little secret">psst&hellip; tap here ✦</button>
+      <div class="secret-reveal" id="secret-reveal" hidden></div>
+    </div>
+  </div>
+</section>
+
+<div class="progress-dots" id="progress"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
